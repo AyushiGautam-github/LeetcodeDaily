@@ -1,0 +1,19 @@
+//1700. Number of Students Unable to Eat Lunch
+
+class Solution {
+public:
+    int countStudents(vector<int>& students, vector<int>& sandwiches) {
+        int j=0,k=0,h=students.size(), m=students.size(); int i=0;
+    while(!students.empty())
+    {
+        if(students[i]==sandwiches[0]) { students.erase(students.begin()); sandwiches.erase(sandwiches.begin()); m--; i=0;}
+        else { 
+            students.push_back(students[i]);
+            students.erase(students.begin());
+           k++;
+            if (k == 200) break;
+        }
+    }
+ return m;
+    }
+};
